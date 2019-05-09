@@ -36,3 +36,8 @@ On my phone, I have a list of contacts. I am able to sort this list by names (fi
 **Suppose weare comparing implementations of insertion sort and merge sort on the same machine. For inputs of size *n*, insertion sort runs in 8*n*<sup>2</sup> steps, while merge sort runs in 64*n*lg*n* steps. For which values of *n* does insertion sort beat merge sort**
 
 First of all, 8*n*<sup>2</sup> < 64*n*lg*n* reduces to *n* < 8lg*n*. Next I used `sort_compare.py` to determine when insertion sort overtakes merge sort, which is at *n* = 43. (hilariously, this script wasn't doing what I wanted it to until I set n to start at 2 instead of 1)
+
+### Exercise 1.2-3
+**What is the smallest value of n such that an algorithm whose running time is 100*n*<sup>2</sup> runs faster than an algorithm whose running time is 2<sup>n</sup> on the same machine?**
+
+I wrote `algorithm_compare.py` to calculate that the lowest value of *n* that satisfies this condition is 15.
