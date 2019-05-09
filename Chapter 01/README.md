@@ -33,4 +33,4 @@ Only-the-best: The methods and procedures used by surgeons during life-saving op
 On my phone, I have a list of contacts. I am able to sort this list by names (first or last), date added, date used, birthday and more. This application must include some sort of sorting algorithm as another user may have an entirely different list of contacts, but would need them to be sorted quickly just the same as me.
 
 ### Exercise 1.2-2
-**Suppose weare comparing implementations of insertion sort and merge sort on the same machine. For inputs of size *n*, insertion sort runs in 8*n*<sup>2</sup> steps, while merge sort runs in 64*n*lg*n* steps. For which values of n does insertion sort beat merge sort**
+**Suppose weare comparing implementations of insertion sort and merge sort on the same machine. For inputs of size *n*, insertion sort runs in 8*n*<sup>2</sup> steps, while merge sort runs in 64*n*lg*n* steps. For which values of *n* does insertion sort beat merge sort**
