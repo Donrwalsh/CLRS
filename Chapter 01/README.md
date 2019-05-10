@@ -41,3 +41,22 @@ First of all, 8*n*<sup>2</sup> < 64*n*lg*n* reduces to *n* < 8lg*n*. Next I used
 **What is the smallest value of n such that an algorithm whose running time is 100*n*<sup>2</sup> runs faster than an algorithm whose running time is 2<sup>n</sup> on the same machine?**
 
 I wrote `algorithm_compare.py` to calculate that the lowest value of *n* that satisfies this condition is 15.
+
+### Problem 1-1 Comparison of running times 
+**For each function *f(n)* and time *t* in the following table, determine the largest size *n* of a problem that can be solved in time *t*, assuming that the algorithm to solve the problem takes *f(n)* microseconds.**
+
+I wrote `running_time_compare.py` to solve this table. The numbers got pretty big, so I used some techniques to simplify the figures. 
+
+| | 1 second | 1 minute | 1 hour | 1 day | 1 month | 1 year | 1 century
+| - | - | - | - | - | - | - | - |
+| lg *n* | 2<sup>10<sup>6</sup></sup> | 2<sup>6*10<sup>7</sup></sup> | 2<sup>3.6*10<sup>9</sup></sup> | 2<sup>8.64*10<sup>10</sup></sup> | 2<sup>2.59*10<sup>12</sup></sup> | 2<sup>3.15*10<sup>13</sup></sup> | 2<sup>3.15*10<sup>15</sup></sup>
+| sqrt(*n*) | 10<sup>12</sup> | 3.6*10<sup>15</sup> | 1.3*10<sup>19</sup> | 7.47*10<sup>21</sup> | 6.72*10<sup>24</sup> | 9.95*10<sup>26</sup> | 9.96*10<sup>30</sup>
+| *n* | 10<sup>6</sup> | 6*10<sup>7</sup> | 3.6*10<sup>9</sup> | 8.64*10<sup>10</sup> | 2.6*10<sup>12</sup> | 3.15*10<sup>13</sup> | 3.15*10<sup>15</sup>
+| *n* lg *n* | 62,746 | 2,801,417 | 133,378,058 | 2,755,147,513 | 71,870,856,404 | 797,633,893,349 | 68,610,956,750,570
+| n<sup>2</sup> | 1,000 | 7,745 | 60,000 | 293,398 | 1,609,968 | 5,615,692 | 56,156,922
+| n<sup>3</sup> | 100| 391 | 1,532 | 4,420 | 13,736 | 31,593 | 146,645
+| 2<sup>*n*</sup> |19 | 25 | 31 | 36 | 41 | 44 | 51
+| *n*! | 9 | 11 | 12 | 13 | 15 | 16 | 17
+
+
+
