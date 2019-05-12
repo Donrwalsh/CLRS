@@ -20,8 +20,9 @@ The idea here is that the step rows are indicating what action occurs in the row
 ### Exercise 2.1-2
 **Rewrite the INSERTION-SORT procedure to sort into nonincreasing instead of nondecreasing order.**
 
-INSERTION-SORT(A)
+The only necessary change is to change the `>` on line 5 to a `<`.
 
+INSERTION-SORT(A)
 
 1 `for  j = 2 to A.length`
 
