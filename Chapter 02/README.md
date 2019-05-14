@@ -39,3 +39,34 @@ INSERTION-SORT(A)
 7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`i = i - 1`
 
 8 &nbsp;&nbsp;&nbsp;&nbsp;`A[i+1] = key`
+
+### Exercise 2.1-3
+**Consider the searching problem:**
+
+***Input*: A sequence of n numbers *A = {a<sub>1</sub>, a<sub>2</sub>, ..., a<sub>n</sub>}* and a value *v*.**
+
+***Output*: An index *i* such that *v* = *A[i]* or the special value NIL if *v* does not appear in *A*.**
+
+**Write pseudocode for *linear search*, which scans through the sequence, looking for *v*. Using a loop invariant, prove that your algorithm is correct. Make sure that your loop invariant fulfills the three necessary properties.**
+
+LINEAR-SEARCH(A, v)
+
+1 `i = NIL`
+
+2 `for j = 1 to A.length`:
+
+3 &nbsp;&nbsp;&nbsp;&nbsp; `if A[j] == v`
+
+4 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `i = j`
+
+5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `break`
+
+6 `return i`
+
+*Loop Invariant*: At the start of each iteration of the for loop of lines 2-5, the subarray *A[1, ... j-1]* consists of elements that are not *v*.
+
+**Initialization**: At initialization, the subarray contains no elements, therefore it does not contain *v*.
+
+**Maintenance**: We already know that *A[1, ... j-1]* does not contain *v*. We then check to see if the element *A[j]* is *v* and assign it to the variable *i* if it does. We also break the for loop in this case, and will then return *i* which is the index of where *v* appears in *A*. Otherwise, we continue to the next iteration of the loop and because we did not find *v* at position *j*, the resulting array still does not contain *v* which means the invariant holds.
+
+**Termination**: The loop will terminate when *j* is greater than the length of *A*. Since we are incrementing *j* by 1, we have thus examined each element of *A* and determined that none of them contain *v*, in which case we return NIL.
