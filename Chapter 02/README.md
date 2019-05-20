@@ -24,7 +24,7 @@ The only necessary change is to change the `>` on line 5 to a `<`.
 
 INSERTION-SORT(A)
 
-1 `for  j = 2 to A.length`
+1 `for  j = 2 to A.length`:
 
 2 &nbsp;&nbsp;&nbsp;&nbsp;`key = A[j]`
 
@@ -32,7 +32,7 @@ INSERTION-SORT(A)
 
 4 &nbsp;&nbsp;&nbsp;&nbsp;`i = j - 1`
 
-5 &nbsp;&nbsp;&nbsp;&nbsp;`while i > 0 and A[i] < key`
+5 &nbsp;&nbsp;&nbsp;&nbsp;`while i > 0 and A[i] < key`:
 
 6 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`A[i+1] = A[i]`
 
@@ -55,7 +55,7 @@ LINEAR-SEARCH(A, v)
 
 2 `for j = 1 to A.length`:
 
-3 &nbsp;&nbsp;&nbsp;&nbsp; `if A[j] == v`
+3 &nbsp;&nbsp;&nbsp;&nbsp; `if A[j] == v`:
 
 4 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `i = j`
 
@@ -70,3 +70,36 @@ LINEAR-SEARCH(A, v)
 **Maintenance**: We already know that *A[1, ... j-1]* does not contain *v*. We then check to see if the element *A[j]* is *v* and assign it to the variable *i* if it does. We also break the for loop in this case, and will then return *i* which is the index of where *v* appears in *A*. Otherwise, we continue to the next iteration of the loop and because we did not find *v* at position *j*, the resulting array still does not contain *v* which means the invariant holds.
 
 **Termination**: The loop will terminate when *j* is greater than the length of *A*. Since we are incrementing *j* by 1, we have thus examined each element of *A* and determined that none of them contain *v*, in which case we return NIL.
+
+### Exercise 2.1-4
+**Consider the problem of adding two *n*-bit binary integers, stored in two *n*-element arrays *A* and *B*. The sum of the two integers should be stored in binary form in an *(n + 1)*-element array *C*. State the problem formally and write pseudocode for adding the two integers.**
+
+**Input**: An array of booleans *A = {a<sub>1</sub>, a<sub>2</sub>, ..., a<sub>n</sub>}* and an array of booleans *B = {b<sub>1</sub>, b<sub>2</sub>, ..., b<sub>n</sub>}*, each representing an integer stored in binary format.
+
+**Output**: An array of booleans *C = {c<sub>1</sub>, c<sub>2</sub>, ..., c<sub>n</sub>}* such that *C* = *A* + *B*.
+
+BINARY-SUM (A, B)
+
+1 `C = new integer[A.length + 1]`
+
+2 `carry - 0`
+
+3 `for i = A.length to 1`:
+
+4 &nbsp;&nbsp;&nbsp;&nbsp; `sum = A[i] + B[i] + carry`
+
+5 &nbsp;&nbsp;&nbsp;&nbsp; `if sum <= 1`:
+
+6 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `C[i] = sum`
+
+7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `carry = 0`
+
+8 &nbsp;&nbsp;&nbsp;&nbsp; `else`:
+
+9 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `C[i] = sum - 2`
+
+10 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `carry = 0`
+
+11 `C[0] = carry`
+
+12 `return C`
