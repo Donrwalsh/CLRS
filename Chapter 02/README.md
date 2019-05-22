@@ -103,3 +103,8 @@ BINARY-SUM (A, B)
 11 `C[0] = carry`
 
 12 `return C`
+
+### Exercise 2.2-1
+**Express the function *n<sup>3</sup>/1000 - 100n<sup>2</sup> - 100n + 3* in terms of  Θ-notation.**
+
+Θ(n<sup>3</sup>)
