@@ -109,7 +109,7 @@ BINARY-SUM (A, B)
 
 Θ(n<sup>3</sup>)
 
-### 2.2-2 
+### Exercise 2.2-2 
 **Consider sorting *n* numbers stored in array *A* by ﬁrst ﬁnding the smallest element of *A* and exchanging it with the element in *A*[1]. Then ﬁnd the second smallest element of *A*, and exchange it with *A*[2]. Continue in this manner for the ﬁrst *n-1* elements of *A*. Write pseudocode for this algorithm, which is known as *selection sort*. What loop invariant does this algorithm maintain? Why does it need to run for only the ﬁrst *n-1* elements, rather than for all *n* elements? Give the best-case and worst-case running times of selection sort in Θ-notation.**
 
 SELECTION-SORT (A)
@@ -139,3 +139,13 @@ SELECTION-SORT (A)
 We only need to run this algorithm for the first *n-1* elements of the array because it is 'forward-looking'. The *n*th element has nothing to be compared against and is therefore trivially the smallest element remaining (which is to say, the largest element).
 
 Both the best and worst case running times are Θ(n<sup>2</sup>).
+
+### Exercise 2.2-3
+**Consider linear search again (see Exercise 2.1-3). How many elements of the input sequence need to be checked on the average, assuming that the element being searched for is equally likely to be any element in the array? How about in the worst case? What are the average-case and worst-case running times of linear search in Θ-notation? Justify your answers.**
+
+On average, we would be examining *n/2* elements before finding our desired value. In the worst-case, we would need to look at all *n* elements. In both of these cases, *n* is the only significant figure therefore both running times are Θ(n<sup>2</sup>).
+
+### Exercise 2.2-4
+**How can we modify almost any algorithm to have a good best-case running time?**
+
+An approach that would work for any algorithm would be to include a 'truth-check' that rapidly verifies whether or not the input already satisfies the requirements of the desired output. For a sorting algorithm, we would look at the input array and determine if it is already sorted. This would result in a very fast best-case scenario, but sort of defeats the purpose of the underlying algorithm at the same time.
