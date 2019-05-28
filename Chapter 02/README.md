@@ -108,3 +108,34 @@ BINARY-SUM (A, B)
 **Express the function *n<sup>3</sup>/1000 - 100n<sup>2</sup> - 100n + 3* in terms of  Θ-notation.**
 
 Θ(n<sup>3</sup>)
+
+### 2.2-2 
+**Consider sorting *n* numbers stored in array *A* by ﬁrst ﬁnding the smallest element of *A* and exchanging it with the element in *A*[1]. Then ﬁnd the second smallest element of *A*, and exchange it with *A*[2]. Continue in this manner for the ﬁrst *n-1* elements of *A*. Write pseudocode for this algorithm, which is known as *selection sort*. What loop invariant does this algorithm maintain? Why does it need to run for only the ﬁrst *n-1* elements, rather than for all *n* elements? Give the best-case and worst-case running times of selection sort in Θ-notation.**
+
+SELECTION-SORT (A)
+
+1 `for i = 1 to A.length - 1`:
+
+2 &nbsp;&nbsp;&nbsp;&nbsp; `smallest_val = A[i]`
+
+3 &nbsp;&nbsp;&nbsp;&nbsp; `smallest_pos = i`
+
+4 &nbsp;&nbsp;&nbsp;&nbsp; `for j = i+1 to A.length`:
+
+5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `if A[j] < smallest_val:`
+
+6 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `smallest_val = A[j]`
+
+7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `smallest_pos = j`
+
+8 &nbsp;&nbsp;&nbsp;&nbsp; `A[smallest_pos] = A[i]`
+
+9 &nbsp;&nbsp;&nbsp;&nbsp; `A[i] = smallest_val`
+
+10 `return A`
+
+*Loop Invariant* At the start of each iteration of the loop in lines 1-9, the subarray *A*[1, ... i-1] contains the smallest elements of A in increasing order. At the start of each iteration of the loop in lines 5-7, the smallest_val variable contains the smallest element of the subarray *A*[i, ... j-1] and the smallest_pos variable contains that value's position in the array.
+
+We only need to run this algorithm for the first *n-1* elements of the array because it is 'forward-looking'. The *n*th element has nothing to be compared against and is therefore trivially the smallest element remaining (which is to say, the largest element).
+
+Both the best and worst case running times are Θ(n<sup>2</sup>).
