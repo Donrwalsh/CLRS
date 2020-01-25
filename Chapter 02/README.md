@@ -149,3 +149,69 @@ On average, we would be examining *n/2* elements before finding our desired valu
 **How can we modify almost any algorithm to have a good best-case running time?**
 
 An approach that would work for any algorithm would be to include a 'truth-check' that rapidly verifies whether or not the input already satisfies the requirements of the desired output. For a sorting algorithm, we would look at the input array and determine if it is already sorted. This would result in a very fast best-case scenario, but sort of defeats the purpose of the underlying algorithm at the same time.
+
+### Exercise 2.3-1
+**Using Figure 2.4 as a model, illustrate the operation of merge sort on the array A = {3, 41, 52, 26, 38, 57, 9, 49}**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`[03, 09, 26, 38, 41, 49, 52, 57]`
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⬈ merge ⬉
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`[03, 26, 41, 52]`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`[09, 38, 49, 57]`
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⬈ merge ⬉&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⬈ merge ⬉
+
+&nbsp;&nbsp;&nbsp;`[03, 41]`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`[26, 52]`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`[38, 57]`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`[09, 49]`
+
+&nbsp;&nbsp;&nbsp;⬈ merge ⬉&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⬈ merge ⬉&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⬈ merge ⬉&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⬈ merge ⬉
+
+&nbsp;`[03]`&nbsp;&nbsp;&nbsp;`[41]`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`[52]`&nbsp;&nbsp;&nbsp;`[26]`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`[38]`&nbsp;&nbsp;&nbsp;`[57]`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`[09]`&nbsp;&nbsp;&nbsp;`[49]`
+
+### Exercise 2.3-2
+**Rewrite the MERGE procedure so that it does not use sentinels, instead stopping once either array *L* or *R* has had all its elements copied back to *A* and then copying the remainder of the other array back into *A*.**
+
+MERGE-SORT (A, p, q, r)
+
+01 `n₁ = q - p + 1`
+
+02 `n₂ = r - q`
+
+03 `Let L[1 . . n₁] and R[1 . . n₂] be new arrays`
+
+04 `for i = 1 to n₁`
+
+05 &nbsp;&nbsp;&nbsp;&nbsp; `L[i] = A[p + i - 1]`
+
+06 `for j = 1 to n₂`
+
+07 &nbsp;&nbsp;&nbsp;&nbsp; `R[j] = A[q + j]`
+
+08 `i = 1`
+
+09 `j = 1`
+
+10 `for k = p to r`
+
+11 &nbsp;&nbsp;&nbsp;&nbsp; `j > n₂`
+
+12 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `A[k] = L[i]`
+
+13 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `i = i + 1`
+
+14 &nbsp;&nbsp;&nbsp;&nbsp; `else if if i > n₁`
+
+15 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `A[k] = R[j]`
+
+16 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `j = j + 1`
+
+17 &nbsp;&nbsp;&nbsp;&nbsp; `else if L[i] ≤ R[j]`
+
+18 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `A[k] = L[i]`
+
+19 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `i = i + 1`
+
+20 &nbsp;&nbsp;&nbsp;&nbsp; `else`
+
+21 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `A[k] = R[j]`
+
+22 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `j = j + 1`
