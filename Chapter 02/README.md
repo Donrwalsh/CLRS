@@ -215,3 +215,29 @@ MERGE-SORT (A, p, q, r)
 21 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `A[k] = R[j]`
 
 22 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `j = j + 1`
+
+### Exercise 2.3-3
+**Use mathematical induction to show that when *n* is an exact power of 2, the solution of the recurrence**
+
+**T(n) = { 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if n = 2**
+
+** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ 2T(n/2) + n &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if n = 2<sup>k</sup>, for k > 1**
+
+**is T(n) = *n*lg*n***
+
+In the base case, *k* = 1, and so *n* = 2<sup>1</sup>. *T*(*n*) = *n*lg*n* = 2·lg(2<sup>1</sup>) = 2·1 = 2. 
+
+Next we suppose this holds for any *k* > 1, and will show that it also holds for any *k* + 1:
+
+*T*(*n*/2) + *n* = *n*lg*n*
+
+2[(2<sup>*k* + 1</sup>/2)·lg(2<sup>*k* + 1</sup>/2)] + 2<sup>*k* + 1</sup> = 2<sup>*k* + 1</sup>lg2<sup>*k* + 1</sup>
+
+2{[2<sup>*k* + 1</sup>/2]·[lg(2<sup>*k* + 1</sup>/2) - lg2] + 2<sup>*k* + 1</sup> = 2<sup>*k* + 1</sup>(*k* + 1)
+
+2{[2<sup>*k* + 1</sup>/2]·[*k* + 1 - 1] + 2<sup>*k* + 1</sup> = 2<sup>*k* + 1</sup>(*k* + 1)
+
+2<sup>*k* + 1</sup>·*k* + 2<sup>*k* + 1</sup> = 2<sup>*k* + 1</sup>(*k* + 1)
+
+2<sup>*k* + 1</sup>(*k* + 1) = 2<sup>*k* + 1</sup>(*k* + 1)
+
