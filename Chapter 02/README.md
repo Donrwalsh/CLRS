@@ -219,9 +219,9 @@ MERGE-SORT (A, p, q, r)
 ### Exercise 2.3-3
 **Use mathematical induction to show that when *n* is an exact power of 2, the solution of the recurrence**
 
-**T(n) = { 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if n = 2**
+**T(n) = { 2, if n = 2**
 
-** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ 2T(n/2) + n &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if n = 2<sup>k</sup>, for k > 1**
+**T(n) = { 2T(n/2) + n, if n = 2<sup>k</sup>, for k > 1**
 
 **is T(n) = *n*lg*n***
 
@@ -241,3 +241,11 @@ Next we suppose this holds for any *k* > 1, and will show that it also holds for
 
 2<sup>*k* + 1</sup>(*k* + 1) = 2<sup>*k* + 1</sup>(*k* + 1)
 
+### Exercise 2.3-4
+**We can express insertion sort as a recursive procedure as follows. In order to sort *A*[1..*n*], we recursively sort *A*[1..*n*-1] and then insert *A*[*n*] into the sorted array *A*[1..*n*-1]. Write a recurrence for the worst-case runnig time of this recursive version of insertion sort.**
+
+Our division of the problem yields 1 subproblem of size *n*/(*n*-1). Dividing the problem takes constant θ(1) time, whereas solving it in the worst case takes θ(*n*-1) time. Using our recurrence calculation (pg.35):
+
+*T*(*n*) = θ(1), if *n* = 1
+
+*T*(*n*) = T(*n* - 1) + θ(*n*), if *n* > 1
