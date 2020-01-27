@@ -249,3 +249,22 @@ Our division of the problem yields 1 subproblem of size *n*/(*n*-1). Dividing th
 *T*(*n*) = θ(1), if *n* = 1
 
 *T*(*n*) = T(*n* - 1) + θ(*n*), if *n* > 1
+
+### Exercise 2.3-5
+**Referring back to the searching problem (see Exercise 2.1-3), observe that if the sequence *A* is sorted, we can check the midpoint of the sequence against *v* and eliminate half of the sequence from further consideration. The *binary search* algorithm repeats this procedure, halving the size of the remaining portion of the sequence each time. Write pseudocode, either iterative or recursive, for binary search. Argue that the worst-case running time of binary search is θ(lg*n*).**
+
+BINARY-SEARCH(*A*, *v*)
+
+*i* = 0
+
+*j* = ceiling(*A*.length/2)
+
+if *A*[*j*] = *v* { *i* += *j* }
+
+else if *A*[*j*] < *v* { *i* += *j* + BINARY-SEARCH(*A*[*j* + 1,...,*n*]) }
+
+else if *A*[*j*] > *v* { *i* += BINARY-SEARCH(*A*[1,...,*j* - 1]) }
+
+return *i*
+
+Intuitively, the worst-case scenrio for BINARY-SEARCH is when *v* does not exist in *A* at all. In which case we halve the array as many times as possible, which takes θ(lg*n*).
