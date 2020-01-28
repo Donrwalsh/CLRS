@@ -268,3 +268,14 @@ else if *A*[*j*] > *v* { *i* += BINARY-SEARCH(*A*[1,...,*j* - 1]) }
 return *i*
 
 Intuitively, the worst-case scenrio for BINARY-SEARCH is when *v* does not exist in *A* at all. In which case we halve the array as many times as possible, which takes θ(lg*n*).
+
+### Exercise 2.3-6
+**Observe that the *while* loop of lines 5-7 of the INSERTION-SORT procedure in Section 2.1 uses a linear search to scan (backward) through the sorted subarray *A*[1..*j* - 1]. Can we use a binary search (see Exercise 2.3-5) instead to improve the overall worst-case running time of insertion sort to θ(*n*lg*n*)?**
+
+The worst-case running time for INSERTION-SORT as presented in section 2.1 involves an array that is in reverse-sort order which we know has a running time of θ(*n*²). The while loop in question effectively contributes one of the *n* values of our run-time, so it seems that we may be able to reduce the worst-case run time by applying INSERTION-SORT. However, this while loop does more than just locate a value. It shifts all of the values one by one as it is searching for the proper location to insert, and thus the worst-case run-time cannot be reduced as we still need to act on each value in our sorted subarray.
+
+### Exercise 2.3-7
+**Describe a θ(*n*lg*n*)-time algorithm that, given a set *S* of *n* integers and another integer *x*, determines whether or not there exist two elements in *S* whose sum is exactly *x*.**
+
+Firstly we sort *S* by way of MERGE-SORT which takes θ(*n*lg*n*) time. We then iterate over our sorted array and use BINARY-SEARCH to determine if the integer that would sum to *x*. BINARY-SEARCH takes θ(lg*n*) time and doing it *n* times takes θ(*n*lg*n*) time. Since both these steps take θ(*n*lg*n*) time, combining the two of them is the same as multiplying that time by a constant factor. Therefore this algorithm runs at θ(*n*lg*n*) time.
+
