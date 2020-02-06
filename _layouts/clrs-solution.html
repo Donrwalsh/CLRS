@@ -7,12 +7,12 @@
       {% for doc in site.solutions %}
         {% if doc.title == page.title %}
           {% unless forloop.first %}
-            {% assign prevurl = prev.url %}
+            {% assign prevurl = prev.url | prepend: site.baseurl %}
             {% assign prevtitle = prev.title %}
           {% endunless %}
           {% unless forloop.last %}
             {% assign next = site.solutions[forloop.index] %}
-            {% assign nexturl = next.url %}
+            {% assign nexturl = next.url | prepend: site.baseurl %}
             {% assign nexttitle = next.title %}
           {% endunless %}
         {% endif %}
