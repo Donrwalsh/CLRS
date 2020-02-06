@@ -2,11 +2,24 @@
 	<meta charset="utf-8">
 	<title>{{ page.title }}</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="shortcut icon" href="{{ '/assets/img/favicon.ico' | prepend: site.baseurl }}" type="image/x-icon">
+	{% if jekyll.environment == "production" %}
+		<link rel="shortcut icon" href="{{ '/assets/img/favicon.ico'}}" type="image/x-icon">
+	{% elsif jekyll.environment == "development" %}
+		<link rel="shortcut icon" href="{{ 'https://donrwalsh.github.io/assets/img/favicon.ico'}}" type="image/x-icon">
+	{% endif %}
+
+
+	
 
 	<!-- stylesheets and javascripts -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-	<link rel="stylesheet" href="/assets/css/styles.css">
+	{% if jekyll.environment == "production" %}
+		<link rel="stylesheet" href="/assets/css/styles.css">
+	{% elsif jekyll.environment == "development" %}
+		<link rel="stylesheet" href="https://donrwalsh.github.io/assets/css/styles.css">
+	{% endif %}
+	
+	
 	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML" crossorigin="anonymous"></script>
 	<script src="https://kit.fontawesome.com/3dfeca0aaa.js" crossorigin="anonymous"></script>
