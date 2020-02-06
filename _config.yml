@@ -2,3 +2,4 @@ collections:
   solutions:
     output: true
 highlighter: rouge
+baseurl: /CLRS
