@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+{% include head.html %}
+  <body>
+    {% include navigation.html %}
+    <main role="main" class="clrs-solution container">      
+      {% for doc in site.solutions %}
+        {% if doc.title == page.title %}
+          {% unless forloop.first %}
+            {% assign prevurl = prev.url %}
+            {% assign prevtitle = prev.title %}
+          {% endunless %}
+          {% unless forloop.last %}
+            {% assign next = site.solutions[forloop.index] %}
+            {% assign nexturl = next.url %}
+            {% assign nexttitle = next.title %}
+          {% endunless %}
+        {% endif %}
+        {% assign prev = doc %}
+      {% endfor %}
+      {% if prevurl or nexturl %}
+      <div class="row">
+        <div class="prev col-1 col-md-3">
+          {% if prevurl %}
+            <a href="{{prevurl}}" class="prev">
+              <i class="fas fa-arrow-left"></i>
+              <span class="d-none d-md-inline">{{ prevtitle}}</span>
+            </a>
+          {% endif %}                    
+        </div>
+        <div class="col-10 col-md-6 title"><h2>{{page.title}}</h2></div>
+        <div class="next col-1 col-md-3">
+          {% if nexturl %}
+            <a href="{{nexturl}}">
+              <span class="d-none d-md-inline">{{ nexttitle}}</span>
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          {% endif %}
+        </div>
+      </div>
+    {% endif %}
+    {% if page.subtitle %}
+      <h3 class="title">{{page.subtitle}}</h3>
+    {% endif %}
+    <div class="clrs-solution">
+      {{ content }}
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,7 @@
+- name: Home
+  link: https://donrwalsh.github.io
+  icon: home
+  
+- name: CLRS
+  link: /
+  icon: graduation-cap

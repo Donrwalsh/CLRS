@@ -1,0 +1,13 @@
+<nav class="navbar navbar-expand navbar-dark bg-dark">
+  <a href="https://donrwalsh.github.io/"><span class="navbar-brand mb-0 h1">Don R Walsh</span></a>
+  <ul class="nav navbar-nav nav-flex-icons ml-auto">
+    {% for item in site.data.navigation %}
+      <li class="nav-item {% if page.url == item.link %}current{% endif %}">
+        <a class="nav-link" href="{{ item.link }}">
+          <i class="fas fa-{{ item.icon }}"></i>
+          <span class="nav-span clearfix d-none d-sm-inline-block"> {{ item.name }}</span>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</nav>
