@@ -1,9 +1,9 @@
 <!doctype html>
 <html>
 {% include head.html %}
-  <body>
-    {% include navigation.html %}
-    <main role="main" class="clrs-solution container">      
+  {% include header.html %}  
+  <body>  
+    <main class="container">      
       {% for doc in site.solutions %}
         {% if doc.title == page.title %}
           {% unless forloop.first %}
