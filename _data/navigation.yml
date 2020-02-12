@@ -5,3 +5,7 @@
 - name: CLRS
   link: /CLRS/
   icon: graduation-cap
+
+- name: LeetCode
+  link: /LeetCode/
+  icon: laptop-code
