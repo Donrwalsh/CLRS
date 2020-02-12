@@ -14,7 +14,7 @@ title: CLRS
                     </div>
                     <div class="col-xl-8 col-lg-9 col-md-10 col-9">
                         <div class="row no-gutters">
-                            {% for solution in site.data.clrs_chapter01_e %}
+                            {% for solution in site.data.ch01_e %}
                             <div class="col-xl-3 col-lg-3 col-2" style="text-align:center;">
                                 <a href="{{ solution.link }}">{{ solution.name }}</a>
                             </div>
@@ -28,7 +28,7 @@ title: CLRS
                     </div>
                     <div class="col-xl-8 col-lg-9 col-md-10 col-9">
                         <div class="row no-gutters">
-                            {% for solution in site.data.clrs_chapter01_p %}
+                            {% for solution in site.data.ch01_p %}
                             <div class="col-xl-3 col-lg-3 col-2" style="text-align:center;">
                                 <a href="{{ solution.link }}">{{ solution.name }}</a>
                             </div>
@@ -49,7 +49,7 @@ title: CLRS
                     </div>
                     <div class="col-xl-8 col-lg-9 col-md-10 col-9">
                         <div class="row no-gutters">
-                            {% for solution in site.data.clrs_chapter02_e %}
+                            {% for solution in site.data.ch02_e %}
                             <div class="col-xl-3 col-lg-3 col-2" style="text-align:center;">
                                 <a href="{{ solution.link }}">{{ solution.name }}</a>
                             </div>
@@ -63,7 +63,7 @@ title: CLRS
                     </div>
                     <div class="col-xl-8 col-lg-9 col-md-10 col-9">
                         <div class="row no-gutters">
-                            {% for solution in site.data.clrs_chapter02_p %}
+                            {% for solution in site.data.ch02_p %}
                             <div class="col-xl-3 col-lg-3 col-2" style="text-align:center;">
                                 <a href="{{ solution.link }}">{{ solution.name }}</a>
                             </div>
@@ -84,7 +84,7 @@ title: CLRS
                     </div>
                     <div class="col-xl-8 col-lg-9 col-md-10 col-9">
                         <div class="row no-gutters">
-                            {% for solution in site.data.clrs_chapter03_e %}
+                            {% for solution in site.data.ch03_e %}
                             <div class="col-xl-3 col-lg-3 col-2" style="text-align:center;">
                                 <a href="{{ solution.link }}">{{ solution.name }}</a>
                             </div>
@@ -98,7 +98,42 @@ title: CLRS
                     </div>
                     <div class="col-xl-8 col-lg-9 col-md-10 col-9">
                         <div class="row no-gutters">
-                            {% for solution in site.data.clrs_chapter03_p %}
+                            {% for solution in site.data.ch03_p %}
+                            <div class="col-xl-3 col-lg-3 col-2" style="text-align:center;">
+                                <a href="{{ solution.link }}">{{ solution.name }}</a>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-4 col-lg-6 col-12 mt-5">
+        <div class="card">
+            <h5 class="card-header">Chapter 04</h5>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-3 col-md-2 col-3">
+                        <strong>Exercises</strong>
+                    </div>
+                    <div class="col-xl-8 col-lg-9 col-md-10 col-9">
+                        <div class="row no-gutters">
+                            {% for solution in site.data.ch04_e %}
+                            <div class="col-xl-3 col-lg-3 col-2" style="text-align:center;">
+                                <a href="{{ solution.link }}">{{ solution.name }}</a>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-xl-4 col-lg-3 col-md-2 col-3">
+                        <strong>Problems</strong>
+                    </div>
+                    <div class="col-xl-8 col-lg-9 col-md-10 col-9">
+                        <div class="row no-gutters">
+                            {% for solution in site.data.ch04_p %}
                             <div class="col-xl-3 col-lg-3 col-2" style="text-align:center;">
                                 <a href="{{ solution.link }}">{{ solution.name }}</a>
                             </div>
