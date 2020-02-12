@@ -18,3 +18,4 @@ As a self-taught developer, working through this textbook is in an effort to clo
 * [https://walkccc.github.io/CLRS/](https://walkccc.github.io/CLRS/) as a source for solutions.
 * [https://clrs.dmoraes.org/sol.pdf](https://clrs.dmoraes.org/sol.pdf) as a source for solutions.
 * [http://guanzhou.pub/files/CLRS/CLRS-Full%20Answer.pdf](http://guanzhou.pub/files/CLRS/CLRS-Full%20Answer.pdf) as a source for solutions.
+* [https://www.desmos.com/calculator](https://www.desmos.com/calculator) wonderful graphing utility for visualizing functions.
