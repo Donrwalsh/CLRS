@@ -6,6 +6,6 @@
   link: /CLRS/
   icon: graduation-cap
 
-- name: LeetCode
-  link: /LeetCode/
-  icon: laptop-code
+- name: Resume
+  link: /resume/
+  icon: file-alt
