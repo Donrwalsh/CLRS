@@ -1,0 +1,24 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  {% for page in site.pages %}
+    <url>
+      <loc>{{page.url | prepend: site.url}}</loc>
+      <lastmod>{{site.time | date_to_xmlschema }}</lastmod>
+      <changefreq>daily</changefreq>
+      <priority>0.5</priority>
+    </url>
+  {% endfor %}
+  {% for data in site.data %}
+    {% for page in data[1] %}
+      <url>
+        <loc>{{page.link | prepend: site.url}}</loc>
+        <lastmod>{{site.time | date_to_xmlschema }}</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
+      </url>
+      {% endfor %}
+  {% endfor %}
+</urlset>
