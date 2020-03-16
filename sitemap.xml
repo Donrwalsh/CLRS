@@ -13,12 +13,14 @@ layout: null
   {% endfor %}
   {% for data in site.data %}
     {% for page in data[1] %}
-      <url>
-        <loc>{{page.link | prepend: site.url}}</loc>
-        <lastmod>{{site.time | date_to_xmlschema }}</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.5</priority>
-      </url>
-      {% endfor %}
+      {% if page.layout == clrs-solution and page.icon == null %}
+        <url>
+          <loc>{{page.link | prepend: site.url}}</loc>
+          <lastmod>{{site.time | date_to_xmlschema }}</lastmod>
+          <changefreq>yearly</changefreq>
+          <priority>0.5</priority>
+        </url>
+      {% endif %}
+    {% endfor %}
   {% endfor %}
 </urlset>
