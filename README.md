@@ -19,3 +19,4 @@ As a self-taught developer, working through this textbook is in an effort to clo
 * [https://clrs.dmoraes.org/sol.pdf](https://clrs.dmoraes.org/sol.pdf) as a source for solutions.
 * [http://guanzhou.pub/files/CLRS/CLRS-Full%20Answer.pdf](http://guanzhou.pub/files/CLRS/CLRS-Full%20Answer.pdf) as a source for solutions.
 * [https://www.desmos.com/calculator](https://www.desmos.com/calculator) wonderful graphing utility for visualizing functions.
+* [https://latextools.readthedocs.io/en/latest/](https://latextools.readthedocs.io/en/latest/) A Sublime Text plugin that enables creating LaTeX documents for building content that MathJax cannot render.
