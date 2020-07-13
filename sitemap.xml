@@ -5,7 +5,7 @@ layout: null
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   {% for page in site.pages %}
     <url>
-      <loc>{{page.url | prepend: site.url}}</loc>
+      <loc>{{page.url | prepend: "/CLRS" | prepend: site.url}}</loc>
       <lastmod>{{site.time | date_to_xmlschema }}</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
