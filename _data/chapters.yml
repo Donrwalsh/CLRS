@@ -13,5 +13,104 @@
 - id: "05"
   type: Chapter
 
+- id: "06"
+  type: Chapter
+
+- id: "07"
+  type: Chapter
+
+- id: "08"
+  type: Chapter
+
+- id: "09"
+  type: Chapter
+
+- id: "10"
+  type: Chapter
+
+- id: "11"
+  type: Chapter
+
+- id: "12"
+  type: Chapter
+
+- id: "13"
+  type: Chapter
+
+- id: "14"
+  type: Chapter
+
+- id: "15"
+  type: Chapter
+
+- id: "16"
+  type: Chapter
+
+- id: "17"
+  type: Chapter
+
+- id: "18"
+  type: Chapter
+
+- id: "19"
+  type: Chapter
+
+- id: "20"
+  type: Chapter
+
+- id: "21"
+  type: Chapter
+
+- id: "22"
+  type: Chapter
+
+- id: "23"
+  type: Chapter
+
+- id: "24"
+  type: Chapter
+
+- id: "25"
+  type: Chapter
+
+- id: "26"
+  type: Chapter
+
+- id: "27"
+  type: Chapter
+
+- id: "28"
+  type: Chapter
+
+- id: "29"
+  type: Chapter
+
+- id: "30"
+  type: Chapter
+
+- id: "31"
+  type: Chapter
+
+- id: "32"
+  type: Chapter
+
+- id: "33"
+  type: Chapter
+
+- id: "34"
+  type: Chapter
+
+- id: "35"
+  type: Chapter
+
 - id: "a1"
   type: Appendix A
+
+- id: "a2"
+  type: Appendix B
+
+- id: "a3"
+  type: Appendix C
+
+- id: "a4"
+  type: Appendix D

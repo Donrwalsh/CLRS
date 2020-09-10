@@ -26,12 +26,12 @@ title: CLRS
                             {% for solution in site.data[exercises] %}
                                 {% capture count %}{{ count | plus: 1 }}{% endcapture %}
                                 {% if solution.link == null %}
-                                    <div class="col-2 clrs-link clrs-incomplete">
+                                    <div class="col-3 clrs-link clrs-incomplete">
                                         {{ solution.name }}
                                     </div>
                                 {% else %}
                                     {% capture complete %}{{ complete | plus: 1 }}{% endcapture %}
-                                    <div class="col-2 clrs-link">
+                                    <div class="col-3 clrs-link">
                                         <a href="{{ solution.link }}">{{ solution.name }}</a>
                                     </div>
                                 {% endif %}
@@ -42,12 +42,12 @@ title: CLRS
                             {% for solution in site.data[problems] %}
                                 {% capture count %}{{ count | plus: 1 }}{% endcapture %}
                                 {% if solution.link == null %}
-                                    <div class="col-2 clrs-link clrs-incomplete">
+                                    <div class="col-3 clrs-link clrs-incomplete">
                                         {{ solution.name }}
                                     </div>
                                 {% else %}
                                     {% capture complete %}{{ complete | plus: 1 }}{% endcapture %}
-                                    <div class="col-2 clrs-link">
+                                    <div class="col-3 clrs-link">
                                         <a href="{{ solution.link }}">{{ solution.name }}</a>
                                     </div>
                                 {% endif %}
