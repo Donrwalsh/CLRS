@@ -3,120 +3,62 @@ layout: default
 title: CLRS
 ---
 <h1 class="title"> <i class="fas fa-graduation-cap"></i> {{ "clrs" | upcase }}</h1>
-<div class="row">
-    <div class="col-xl-4 col-lg-6 col-12 mt-3 mb-3">
-        <div class="card">
-            <h5 class="card-header">Chapter 01</h5>
-            <div class="card-body">
-                <strong>Exercises</strong>
-                <div class="row no-gutters mt-2 mb-2">
-                    {% for solution in site.data.ch01_e %}
-                    <div class="col-2 clrs-link">
-                        <a href="{{ solution.link }}">{{ solution.name }}</a>
+{% assign count = 0 %}
+{% assign complete = 0 %}
+<div id="hub-container">
+    <div class="row">
+        {% for chapter in site.data.chapters %}
+            {% if chapter.type == "Chapter" %}
+                {% assign prefix = "ch" %}
+                {% assign id = chapter.id %}
+            {% else %}
+                {% assign prefix = chapter.id %}
+                {% assign id = "" %}
+            {% endif %}
+            {% assign exercises = prefix | append: id | append: "_e" %}
+            {% assign problems = prefix | append: id | append: "_p" %}
+            <div class="col-xl-4 col-lg-6 col-12 mt-3 mb-3">
+                <div class="card">
+                    <h5 class="card-header">{{ chapter.type | append: " " | append: id}}</h5>
+                    <div class="card-body">
+                        <strong>Exercises</strong>
+                        <div class="row no-gutters mt-2 mb-2">
+                            {% for solution in site.data[exercises] %}
+                                {% capture count %}{{ count | plus: 1 }}{% endcapture %}
+                                {% if solution.link == null %}
+                                    <div class="col-2 clrs-link clrs-incomplete">
+                                        {{ solution.name }}
+                                    </div>
+                                {% else %}
+                                    {% capture complete %}{{ complete | plus: 1 }}{% endcapture %}
+                                    <div class="col-2 clrs-link">
+                                        <a href="{{ solution.link }}">{{ solution.name }}</a>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                        <strong>Problems</strong>
+                        <div class="row no-gutters mt-2 mb-2">
+                            {% for solution in site.data[problems] %}
+                                {% capture count %}{{ count | plus: 1 }}{% endcapture %}
+                                {% if solution.link == null %}
+                                    <div class="col-2 clrs-link clrs-incomplete">
+                                        {{ solution.name }}
+                                    </div>
+                                {% else %}
+                                    {% capture complete %}{{ complete | plus: 1 }}{% endcapture %}
+                                    <div class="col-2 clrs-link">
+                                        <a href="{{ solution.link }}">{{ solution.name }}</a>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
                     </div>
-                    {% endfor %}
-                </div>
-                <strong>Problem</strong>
-                <div class="row no-gutters mt-2 mb-2">
-                    {% for solution in site.data.ch01_p %}
-                    <div class="col-2 clrs-link">
-                        <a href="{{ solution.link }}">{{ solution.name }}</a>
-                    </div>
-                    {% endfor %}
                 </div>
             </div>
-        </div>
+        {% endfor %}
     </div>
-    <div class="col-xl-4 col-lg-6 col-12 mt-3 mb-3">
-        <div class="card">
-            <h5 class="card-header">Chapter 02</h5>
-            <div class="card-body">
-                <strong>Exercises</strong>
-                <div class="row no-gutters mt-2 mb-2">
-                    {% for solution in site.data.ch02_e %}
-                    <div class="col-2 clrs-link">
-                        <a href="{{ solution.link }}">{{ solution.name }}</a>
-                    </div>
-                    {% endfor %}
-                </div>
-                <strong>Problems</strong>
-                <div class="row no-gutters mt-2 mb-2">
-                    {% for solution in site.data.ch02_p %}
-                    <div class="col-2 clrs-link">
-                        <a href="{{ solution.link }}">{{ solution.name }}</a>
-                    </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-xl-4 col-lg-6 col-12 mt-3 mb-3">
-        <div class="card">
-            <h5 class="card-header">Chapter 03</h5>
-            <div class="card-body">
-                <strong>Exercises</strong>
-                <div class="row no-gutters mt-2 mb-2">
-                    {% for solution in site.data.ch03_e %}
-                    <div class="col-2 clrs-link">
-                        <a href="{{ solution.link }}">{{ solution.name }}</a>
-                    </div>
-                    {% endfor %}
-                </div>
-                <strong>Problems</strong>
-                <div class="row no-gutters mt-2 mb-2">
-                    {% for solution in site.data.ch03_p %}
-                    <div class="col-2 clrs-link">
-                        <a href="{{ solution.link }}">{{ solution.name }}</a>
-                    </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-xl-4 col-lg-6 col-12 mt-3 mb-3">
-        <div class="card">
-            <h5 class="card-header">Chapter 04</h5>
-            <div class="card-body">
-                <strong>Exercises</strong>
-                <div class="row no-gutters mt-2 mb-2">
-                    {% for solution in site.data.ch04_e %}
-                    <div class="col-2 clrs-link">
-                        <a href="{{ solution.link }}">{{ solution.name }}</a>
-                    </div>
-                    {% endfor %}
-                </div>
-                <strong>Problems</strong>
-                <div class="row no-gutters mt-2 mb-2">
-                    {% for solution in site.data.ch04_p %}
-                    <div class="col-2 clrs-link">
-                        <a href="{{ solution.link }}">{{ solution.name }}</a>
-                    </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-xl-4 col-lg-6 col-12 mt-3 mb-3">
-        <div class="card">
-            <h5 class="card-header">Appendix A</h5>
-            <div class="card-body">
-                <strong>Exercises</strong>
-                <div class="row no-gutters mt-2 mb-2">
-                    {% for solution in site.data.a1_e %}
-                    <div class="col-2 clrs-link">
-                        <a href="{{ solution.link }}">{{ solution.name }}</a>
-                    </div>
-                    {% endfor %}
-                </div>
-                <strong>Problem</strong>
-                <div class="row no-gutters mt-2 mb-2">
-                    {% for solution in site.data.a1_p %}
-                    <div class="col-2 clrs-link">
-                        <a href="{{ solution.link }}">{{ solution.name }}</a>
-                    </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
+    <div class="row" id="percent-container">
+        <h3 id="percent">{{complete | times: 1.0 | divided_by: count | times: 10000 | round | divided_by: 100.0}}% complete</h1>
     </div>
 </div>
