@@ -5,7 +5,7 @@ title: CLRS
 <h1 class="title"> 
     <i onclick="randomAssignment()" class="fas fa-graduation-cap"></i> {{ "clrs" | upcase }}
 </h1>
-<h2 id = "randomAssignment"></h2>
+<h2 class="randomAssignment"></h2>
 {% assign count = 0 %}
 {% assign complete = 0 %}
 <div id="hub-container">
@@ -68,7 +68,7 @@ title: CLRS
 
 <script>
     function randomAssignment() {
-        var assignment = $('#randomAssignment');
+        var assignment = $('.randomAssignment');
         var cards = $('.card > .card-body > .row > .clrs-incomplete').parent().parent().parent();
         var random = Math.floor(Math.random()*cards.length);
         var result = cards.eq(random).find('.clrs-link.clrs-incomplete').first().html().trim();
