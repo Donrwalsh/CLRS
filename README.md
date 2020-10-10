@@ -24,3 +24,4 @@ As a self-taught developer, working through this textbook is in an effort to clo
 * [http://index-of.co.uk/Algorithms/Introduction%20to%20Algorithms-Cormen%20Solution.pdf](http://index-of.co.uk/Algorithms/Introduction%20to%20Algorithms-Cormen%20Solution.pdf) as a definitive source for some solutions.
 * [https://www.desmos.com/calculator](https://www.desmos.com/calculator) wonderful graphing utility for visualizing functions.
 * [https://latextools.readthedocs.io/en/latest/](https://latextools.readthedocs.io/en/latest/) A Sublime Text plugin that enables creating LaTeX documents for building content that MathJax cannot render.
+* [https://www.tablesgenerator.com/](https://www.tablesgenerator.com/) Helpful tool for getting the ball rolling on building complex table structures in LaTeX.
