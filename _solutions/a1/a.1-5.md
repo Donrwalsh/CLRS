@@ -4,7 +4,7 @@ title:  "Exercise A.1-5"
 ---
 >Evaluate the sum $$\sum\limits^{\infty}_{k=1}(2k+1)x^2k$$ for $$\lvert x \rvert < 1$$.
 
-$$(2k+1)x^2k$$ looks familiar in that it is te derivative of $$x^{2k+1}$$. Let's work backwards to derive a solution.
+$$(2k+1)x^2k$$ looks familiar in that it is the derivative of $$x^{2k+1}$$. Let's work backwards to derive a solution.
 
 $$\begin{split}
 \sum\limits^{\infty}_{k=1}x^k &= \frac{x}{1-x} \\
