@@ -2,6 +2,10 @@
   link: https://donrwalsh.github.io
   icon: home
   
+- name: Blog
+  link: /blog
+  icon: bullhorn
+
 - name: CLRS
   link: /CLRS/
   icon: graduation-cap
