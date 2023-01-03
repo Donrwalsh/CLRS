@@ -6,6 +6,10 @@
   link: /blog
   icon: bullhorn
 
+- name: CCI
+  link: /CCI/
+  icon: unlock
+
 - name: CLRS
   link: /CLRS/
   icon: graduation-cap
