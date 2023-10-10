@@ -5,7 +5,7 @@ first %}
   class="header navbar navbar-expand {% if jekyll.environment == 'development' %} navbar-warning bg-warning {% else %} navbar-dark bg-dark {% endif %}"
 >
   <a
-    href="{% if jekyll.environment == 'development' %} {{home.dev-link}} {% else %} home.link {% endif %}"
+    href="{% if jekyll.environment == 'development' %} {{home.dev-link}} {% else %} {{home.link}} {% endif %}"
     ><span class="navbar-brand mb-0 h1">Don R Walsh</span></a
   >
   {% if jekyll.environment == 'development' %}
