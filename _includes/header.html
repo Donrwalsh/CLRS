@@ -16,7 +16,7 @@ first %}
     <li class="nav-item {% if page.url == item.link %}current{% endif %}">
       <a
         class="nav-link"
-        href="{% if jekyll.environment == 'development' %} {{item.dev-link}} {% else %} item.link {% endif %}"
+        href="{% if jekyll.environment == 'development' %} {{item.dev-link}} {% else %} {{item.link}} {% endif %}"
       >
         <i class="fas fa-{{ item.icon }}"></i>
         <span class="nav-span clearfix d-none d-sm-inline-block">
