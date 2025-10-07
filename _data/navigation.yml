@@ -3,16 +3,6 @@
   dev-link: http://localhost:4000/
   icon: house-fill
 
-- name: Blog
-  link: /blog
-  dev-link: /blog
-  icon: megaphone-fill
-
-- name: CCI
-  link: /CCI/
-  dev-link: http://localhost:4002/CCI/
-  icon: unlock-fill
-
 - name: CLRS
   link: /CLRS/
   dev-link: http://localhost:4001/CLRS/
