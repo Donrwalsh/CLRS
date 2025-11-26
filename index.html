@@ -5,7 +5,7 @@ title: CLRS
 <h1 class="title"> 
     <i onclick="randomAssignment()" class="bi bi-mortarboard-fill"></i> {{ "clrs" | upcase }}
 </h1>
-<h2 class="random-assignment"></h2>
+<h2 id="random-assignment"></h2>
 {% assign count = 0 %}
 {% assign complete = 0 %}
 <div id="hub-container">
@@ -68,21 +68,23 @@ title: CLRS
 
 <script>
     function randomAssignment() {
-        var assignment = $('.randomAssignment');
-        var cards = $('.card > .card-body > .row > .clrs-incomplete').parent().parent().parent();
-        var random = Math.floor(Math.random()*cards.length);
-        var result = cards.eq(random).find('.clrs-link.clrs-incomplete').first().html().trim();
-        
+        const assignment = document.getElementById('random-assignment');
+        const nodes = document.querySelectorAll('.card > .card-body > .row > .clrs-incomplete');
+        const cards = Array.from(nodes, el => el.closest('.card'));
+        const uniqueCards = Array.from(new Set(cards));
+        const randomUniqueCard = Math.floor(Math.random()*uniqueCards.length);
+        const result = uniqueCards[randomUniqueCard].querySelector('.clrs-link.clrs-incomplete').innerText.trim();
+
         var prefix = "random assignment: ";
 
-        var exerciseReg = /[A-D\d]\.\d\-\d/;
-        var problemReg = /[A-D\d]\-\d/;
+        const exerciseReg = /[A-D\d]\.\d\-\d/;
+        const problemReg = /[A-D\d]\-\d/;
         if (exerciseReg.test(result)) {
             prefix += "Exercise ";
         } else if (problemReg.test(result)) {
             prefix += "Problem "
         }
 
-        assignment.text(prefix + result);
+        assignment.textContent = prefix + result;
     }
 </script>
