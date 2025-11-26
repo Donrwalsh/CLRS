@@ -2,28 +2,31 @@
 first %}
 
 <header
-  class="header navbar navbar-expand {% if jekyll.environment == 'development' %} navbar-warning bg-warning {% else %} navbar-dark bg-dark {% endif %}"
+  class="header navbar navbar-expand-lg {% if jekyll.environment == 'development' %} navbar-warning bg-warning {% else %} navbar-dark bg-dark {% endif %}"
 >
-  <a
-    href="{% if jekyll.environment == 'development' %} {{home.dev-link}} {% else %} {{home.link}} {% endif %}"
-    ><span class="navbar-brand mb-0 h1">Don R Walsh</span></a
-  >
-  {% if jekyll.environment == 'development' %}
-  <strong style="margin: auto" class="d-none d-sm-block">DEVELOPMENT</strong>
-  {% endif %}
-  <ul class="nav navbar-nav nav-flex-icons ml-auto">
-    {% for item in site.data.navigation %}
-    <li class="nav-item {% if page.url == item.link %}current{% endif %}">
-      <a
-        class="nav-link"
-        href="{% if jekyll.environment == 'development' %} {{item.dev-link}} {% else %} {{item.link}} {% endif %}"
-      >
-        <i class="bi bi-{{ item.icon }}"></i>
-        <span class="nav-span clearfix d-none d-sm-inline-block">
-          {{ item.name }}</span
+  <div class="container">
+    <a
+      class="navbar-brand mb-0 h1"
+      href="{% if jekyll.environment == 'development' %} {{home.dev-link}} {% else %} {{home.link}} {% endif %}"
+      >Don R Walsh</a
+    >
+    {% if jekyll.environment == 'development' %}
+    <strong style="margin: auto" class="d-none d-xs-block">DEVELOPMENT</strong>
+    {% endif %}
+    <ul class="nav navbar-nav nav-flex-icons ml-auto">
+      {% for item in site.data.navigation %}
+      <li class="nav-item {% if page.url == item.link %}current{% endif %}">
+        <a
+          class="nav-link"
+          href="{% if jekyll.environment == 'development' %} {{item.dev-link}} {% else %} {{item.link}} {% endif %}"
         >
-      </a>
-    </li>
-    {% endfor %}
-  </ul>
+          <i class="bi bi-{{ item.icon }}"></i>
+          <span class="nav-span clearfix d-none d-sm-inline-block">
+            {{ item.name }}</span
+          >
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
 </header>
