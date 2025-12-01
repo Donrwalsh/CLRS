@@ -12,7 +12,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "main"
+  group: "clrs"
   cancel-in-progress: true
 
 jobs:
