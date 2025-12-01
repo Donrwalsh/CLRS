@@ -1,4 +1,4 @@
-name: Deploy Jekyll site to Github Pages
+name: Deploy CLRS site to Github Pages
 
 on:
   push:
