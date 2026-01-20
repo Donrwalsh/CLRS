@@ -3,7 +3,7 @@ layout: clrs-solution
 title: "Exercise A.1-7"
 ---
 
-> Evaluate the product $$ \prod_{k=1}^n 2 \cdot 4^k$$
+> Evaluate the product $$ \prod_{k=1}^n 2 \cdot 4^k$$.
 
 This expression can be rearranged a few times by taking advantage of identities found in this appendix. We start by taking the log of the product to turn it into a summation:
 
